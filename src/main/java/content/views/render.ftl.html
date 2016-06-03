@@ -1,0 +1,54 @@
+<#import "/content/views/layout/general.ftl.html" as layout>
+<@layout.myLayout "Home page">
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <form action="/domain" method="POST">
+                <label for="title" class="col-lg-2 control-label">${i18n("siteSelection")}</label>
+                <div class="col-lg-10">
+                    <input type="text" name="host" id="domain"  class="form-control"/>
+                </div>
+                    <a href="javascript:void(0);" class="clearDomain waves-effect waves-light btn">Clear Domain</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-lg btn-block">Select Company</button>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col s1">1</div>
+    <div class="col s1">2</div>
+    <div class="col s1">3</div>
+    <div class="col s1">4</div>
+    <div class="col s1">5</div>
+    <div class="col s1">6</div>
+    <div class="col s1">7</div>
+    <div class="col s1">8</div>
+    <div class="col s1">9</div>
+    <div class="col s1">10</div>
+    <div class="col s1">11</div>
+    <div class="col s1">12</div>
+</div>
+
+<hr/>
+
+<script>
+
+    $(".clearDomain").on("click",function(){
+        $.post("/domain/clear");
+    });
+
+</script>
+
+
+</@layout.myLayout>
